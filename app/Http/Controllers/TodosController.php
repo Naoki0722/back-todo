@@ -110,6 +110,7 @@ class TodosController extends Controller
         try {
             Todo::where('id', $todo->id)->delete();
             $message = 'list successfully deleted';
+            $status = 200;
         } catch (\Throwable $th) {
             $message = 'ERROR DB connection NG';
             $status = 500;
